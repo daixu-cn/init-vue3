@@ -1,0 +1,126 @@
+{
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
+  "rules": {
+    "type-enum": [
+      2,
+      "always",
+      [
+        "feat",
+        "fix",
+        "perf",
+        "docs",
+        "refactor",
+        "style",
+        "chore",
+        "ci",
+        "build",
+        "test",
+        "revert"
+      ]
+    ],
+    "subject-case": [
+      2,
+      "always",
+      "sentence-case"
+    ]
+  },
+  "prompt": {
+    "messages": {
+      "skip": " (可选) ",
+      "emptyWarning": "该字段不能为空",
+      "upperLimitWarning": "超出字符限制",
+      "lowerLimitWarning": "字符数小于下限"
+    },
+    "questions": {
+      "type": {
+        "description": "请选择提交类型",
+        "enum": {
+          "feat": {
+            "description": "新功能",
+            "title": "Features",
+            "emoji": "✨"
+          },
+          "fix": {
+            "description": "错误修复",
+            "title": "Bug Fixes",
+            "emoji": "🐛"
+          },
+          "perf": {
+            "description": "性能优化",
+            "title": "Performance Improvements",
+            "emoji": "🚀"
+          },
+          "docs": {
+            "description": "文档更改",
+            "title": "Documentation",
+            "emoji": "📚"
+          },
+          "refactor": {
+            "description": "代码重构,不涉及功能新增或修复",
+            "title": "Code Refactoring",
+            "emoji": "📦"
+          },
+          "style": {
+            "description": "不影响代码含义的更改（空格、格式、缺少分号等）",
+            "title": "Styles",
+            "emoji": "💎"
+          },
+          "chore": {
+            "description": "对构建过程、辅助工具或其他与项目开发相关的变动。",
+            "title": "Chores",
+            "emoji": "♻️"
+          },
+          "ci": {
+            "description": "对持续集成配置的变动（自动化构建、测试和部署流程） ",
+            "title": "Continuous Integrations",
+            "emoji": "⚙️"
+          },
+          "build": {
+            "description": "影响构建系统或外部依赖项 (优化打包输出/减小文件体积)",
+            "title": "Builds",
+            "emoji": "🛠"
+          },
+          "test": {
+            "description": "测试代码的变动",
+            "title": "Tests",
+            "emoji": "🚨"
+          },
+          "revert": {
+            "description": "代码回退",
+            "title": "Reverts",
+            "emoji": "🗑"
+          }
+        }
+      },
+      "scope": {
+        "description": "范围/作用域 (例如组件或文件名)"
+      },
+      "subject": {
+        "description": "简要描述"
+      },
+      "body": {
+        "description": "详细描述"
+      },
+      "isBreaking": {
+        "description": "有任何重大变化吗?"
+      },
+      "breakingBody": {
+        "description": "列出所有重大变更,请输入提交本身的较长描述"
+      },
+      "breaking": {
+        "description": "描述重大变化"
+      },
+      "isIssueAffected": {
+        "description": "此更改是否会影响任何未解决的问题?"
+      },
+      "issuesBody": {
+        "description": "如果问题已关闭,则提交需要正文。请输入提交本身的较长描述"
+      },
+      "issues": {
+        "description": "添加问题参考 (如: “fix #123”、“re #123”)"
+      }
+    }
+  }
+}

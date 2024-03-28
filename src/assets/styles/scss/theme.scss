@@ -1,0 +1,34 @@
+:root {
+  --dx-scrollbar-color: #9093994d;
+  --dx-scrollbar-hover-color: #90939980;
+
+  --dx-color: #74ebd5;
+  --dx-bg-color: #ffffff;
+  --dx-bg-color-soft: #f8f8f8;
+  --dx-bg-color-mute: #f2f2f2;
+
+  --dx-font-color: #213547;
+  --dx-font-color-2: #3c3c3cb3;
+  --dx-font-size: 15px;
+  --dx-font-family: "JetBrains Mono", Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+
+  --dx-space: 12px;
+  --dx-border-radius: 6px;
+  --dx-duration: 0.3s;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --dx-scrollbar-color: #a3a6ad4d;
+  --dx-scrollbar-hover-color: #a3a6ad80;
+
+  --dx-bg-color: #1a1a1a;
+  --dx-bg-color-soft: #242424;
+  --dx-bg-color-mute: #282828;
+
+  --dx-font-color: #ffffffde;
+  --dx-font-color-2: #ebebeb99;
+}

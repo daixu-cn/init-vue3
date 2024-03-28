@@ -1,0 +1,82 @@
+//单行超出隐藏
+@mixin text-ellipsis($type: ellipsis) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: $type;
+}
+
+//多行超出隐藏
+@mixin more-text-ellipsis($rowNum: 1) {
+  // $rowNum设定多少行
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $rowNum;
+  overflow: hidden;
+}
+
+//行内元素垂直居中
+@mixin vertical-middle {
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+//使用 flex 水平、垂直居中
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 滚动条-滑块配置
+@mixin scrollbar-thumb(
+  $scrollbar-color: var(--dx-scrollbar-color),
+  $scrollbar-hover-color: var(--dx-scrollbar-hover-color)
+) {
+  background-color: $scrollbar-color;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: $scrollbar-hover-color;
+  }
+}
+
+// 滚动条配置
+@mixin scrollbar(
+  $width: 6px,
+  $height: 100%,
+  $scrollbar-color: var(--dx-scrollbar-color),
+  $scrollbar--hover-color: var(--dx-scrollbar-hover-color)
+) {
+  /*滚动条上的按钮 (上下箭头)*/
+  ::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+
+  /*垂直滚动条和水平滚动条同时出现时右下角交汇的部分*/
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  /*滚动条轨道*/
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /*整个滚动条*/
+  ::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+    background-color: transparent;
+    overflow: overlay;
+  }
+
+  /*滚动条上的滚动滑块*/
+  ::-webkit-scrollbar-thumb {
+    @include scrollbar-thumb($scrollbar-color, $scrollbar--hover-color);
+  }
+}
